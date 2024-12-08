@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <title>InfoWorld - As notícias que você precisa saber</title>
+
+    <!-- plugins -->
+
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" media="screen">
+
+    <!--Favicon-->
+    <link rel="icon"
+      href="https://img.icons8.com/glyph-neue/64/e7272d/internet.png"
+      type="image/png">
+
+    <body>
+      <!-- navigation -->
+      <header class="navigation fixed-top">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-white">
+            <a class="navbar-brand order-1" href="home.php">
+              <h1 style="font-size: 25px;">InfoWorld</h1>
+            </a>
+            <div class="collapse navbar-collapse text-center order-lg-2 order-3"
+              id="navigation">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="advertise.html">Anunciar</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contato</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="about-me.html">Nossa Equipe</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- /navigation -->
+
+      <div class="header text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 mx-auto">
+              <h1 class="mb-4">Fale Conosco</h1>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a class="text-default"
+                    href="home.php">Home
+                    &nbsp; &nbsp; /</a></li>
+                <li class="list-inline-item text-primary">Fale Conosco</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-sm">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+
+              <div class="content mb-5">
+                <h2 id="we-would-love-to-hear-from-you">Adoraríamos ouvir de
+                  você&hellip;.</h2>
+                <p>Estamos sempre prontos para ouvir você! No InfoWorld,
+                  valorizamos o contato com nossos leitores e estamos aqui para
+                  responder suas dúvidas, sugestões ou preocupações. Se você
+                  deseja saber mais sobre nossos conteúdos, parcerias, ou
+                  qualquer outro assunto, entre em contato conosco. Nossa equipe
+                  está disponível para garantir uma experiência agradável e útil
+                  para todos. Fique à vontade para compartilhar suas ideias e
+                  sugestões!</p>
+              </div>
+
+              <form method="POST" id="contactForm">
+                <div class="form-group">
+                  <label for="name">Seu Nome (Obrigatório)</label>
+                  <input type="text" name="name" id="name" class="form-control"
+                    placeholder="João da Silva" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Seu Endereço de E-mail
+                    (Obrigatório)</label>
+                  <input type="email" name="email" id="email"
+                    class="form-control" placeholder="joaodasilva@gmail.com"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label for="text">Motivo do Contato</label>
+                  <input type="text" name="motivo" id="text"
+                    class="form-control" placeholder="Publicidade">
+                </div>
+                <div class="form-group">
+                  <label for="message">Sua Mensagem Aqui</label>
+                  <textarea name="message" id="message" class="form-control"
+                    placeholder></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar
+                  Agora</button>
+              </form>
+
+              <!-- O Popup que aparece após o envio -->
+              <div id="popupMessage" class="popup" style="display: none;"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="margin-bottom: 0px;">
+
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-5 text-center text-md-left mb-4">
+            <ul class="list-inline footer-list mb-0">
+              <li class="list-inline-item"><a
+                  href="privacy-policy.html">Política de Privacidade</a></li>
+              <li class="list-inline-item"><a
+                  href="terms-conditions.html">Termos e Condições</a></li>
+            </ul>
+          </div>
+          <div class="col-md-5 text-md-right text-center mb-4">
+            <ul class="list-inline footer-list mb-0">
+
+              <li class="list-inline-item"><a href="#"><i
+                    class="ti-facebook"></i></a></li>
+
+              <li class="list-inline-item"><a href="#"><i
+                    class="ti-twitter-alt"></i></a></li>
+
+              <li class="list-inline-item"><a href="#"><i
+                    class="ti-instagram"></i></a></li>
+
+              <li class="list-inline-item"><a href="#"><i
+                    class="ti-youtube"></i></a></li>
+
+            </ul>
+          </div>
+          <div class="col-12">
+            <div class="border-bottom border-default"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS Plugins -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+
+    <script src="plugins/slick/slick.min.js"></script>
+
+    <script src="plugins/instafeed/instafeed.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="js/script.js"></script></body>
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Pegando o formulário e o popup
+        const form = document.getElementById('contactForm');
+        const popup = document.getElementById('popupMessage');
+      
+        // Verificando se o formulário existe
+        if (!form) {
+          console.log("Formulário não encontrado!");
+          return;
+        }
+      
+        // Adicionando o evento de submit no formulário
+        form.addEventListener('submit', function (e) {
+          e.preventDefault(); // Impede o envio padrão do formulário
+      
+          // Pegando os valores dos campos
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+      
+          // Validando os campos
+          if (!name || !email) {
+            popup.textContent = 'Por favor, preencha os campos obrigatórios.';
+            popup.className = 'popup error';
+            popup.style.display = 'block';
+            
+            // Ocultar o popup após 3 segundos
+            setTimeout(() => {
+              popup.style.display = 'none';
+            }, 3000);
+      
+            return; // Não envia o formulário
+          }
+      
+          // Se a validação passar, exibe a mensagem de sucesso
+          popup.textContent = 'Mensagem enviada com sucesso!';
+          popup.className = 'popup success';
+          popup.style.display = 'block';
+      
+          // Ocultar o popup após 3 segundos
+          setTimeout(() => {
+            popup.style.display = 'none';
+          }, 3000);
+      
+          // Limpar os campos após o envio
+          form.reset();
+        });
+      });
+      </script>
+
+</html>

@@ -2,6 +2,7 @@
 $mensagem = isset($_GET['mensagem']) ? $_GET['mensagem'] : '';
 $mensagem_class = isset($_GET['mensagem_class']) ? $_GET['mensagem_class'] : '';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,6 +21,32 @@ $mensagem_class = isset($_GET['mensagem_class']) ? $_GET['mensagem_class'] : '';
 
   <!--Favicon-->
   <link rel="icon" href="https://img.icons8.com/glyph-neue/64/e7272d/internet.png" type="image/png">
+</head>
+<style>
+    .popup {
+        display: block;
+        width: fit-content; /* Ajusta o tamanho para caber no texto */
+        max-width: 80%; /* Limita a largura da mensagem */
+        margin: 20px auto; /* Centraliza horizontalmente */
+        padding: 10px 20px;
+        text-align: center; /* Centraliza o texto */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup.success {
+        border-color: green;
+        color: green;
+    }
+
+    .popup.error {
+        border-color: red;
+        color: red;
+    }
+</style>
+
 
 <body>
   <!-- navigation -->
@@ -52,11 +79,11 @@ $mensagem_class = isset($_GET['mensagem_class']) ? $_GET['mensagem_class'] : '';
     <div class="container">
       <div class="row">
         <div class="col-lg-9 mx-auto">
-          <h1 class="mb-4">Criar Notícia</h1>
+          <h1 class="mb-4">Login</h1>
           <ul class="list-inline">
             <li class="list-inline-item"><a class="text-default" href="home.php">Home
                 &nbsp; &nbsp; /</a></li>
-            <li class="list-inline-item text-primary">Criar Notícia</li>
+            <li class="list-inline-item text-primary">Login</li>
           </ul>
         </div>
       </div>
@@ -69,49 +96,23 @@ $mensagem_class = isset($_GET['mensagem_class']) ? $_GET['mensagem_class'] : '';
         <div class="col-lg-8 mx-auto">
 
           <div class="content mb-5">
-            <h2 id="we-would-love-to-hear-from-you">Crie uma Nova
-              Notícia...</h2>
-            <p>Use o formulário abaixo para adicionar uma nova notícia ao
-              InfoWorld. Informe todos os detalhes, como o título, conteúdo
-              e a categoria da notícia. Ao enviar, a notícia será publicada
-              no nosso site após revisão.</p>
+            <h2>Login do Administrador</h2>
+            <p>Digite suas credenciais para acessar a área de administração.</p>
           </div>
 
-          <form method="POST" action="processar_noticia.php">
+          <form method="POST" action="processar_login.php">
             <div class="form-group">
-              <label for="title">Título da Notícia (Obrigatório)</label>
-              <input type="text" name="titulo" id="title" class="form-control" placeholder="Título da Notícia" required>
+              <label for="login">Login</label>
+              <input type="text" name="login" id="login" class="form-control" placeholder="Digite seu login" required>
             </div>
             <div class="form-group">
-              <label for="author">Autor (Obrigatório)</label>
-              <input type="text" name="autor" id="author" class="form-control" placeholder="Nome do Autor" required>
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite sua senha"
+                required>
             </div>
-            <div class="form-group">
-              <label for="category">Categoria da Notícia
-                (Obrigatório)</label>
-              <select name="categoria" id="category" class="form-control" required>
-                <option value="cinema">Cinema</option>
-                <option value="esportes">Esportes</option>
-                <option value="estilo_de_vida">Estilo de Vida</option>
-                <option value="famosos">Famosos</option>
-                <option value="jogos_digitais">Jogos Digitais</option>
-                <option value="meio_ambiente">Meio Ambiente</option>
-                <option value="musica">Música</option>
-                <option value="tecnologia">Tecnologia</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="content">Conteúdo da Notícia (Obrigatório)</label>
-              <textarea name="conteudo" id="content" class="form-control" rows="7"
-                placeholder="Escreva o conteúdo da sua notícia..." required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="image">URL da Imagem (Obrigatório)</label>
-              <input type="url" name="url" id="image" class="form-control" placeholder="URL da Imagem" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Publicar
-              Notícia</button>
+            <button type="submit" class="btn btn-primary">Entrar</button>
           </form>
+
           <?php if ($mensagem): ?>
             <div class="popup <?php echo $mensagem_class; ?>" id="popupMessage">
               <?php echo $mensagem; ?>
@@ -166,7 +167,7 @@ $mensagem_class = isset($_GET['mensagem_class']) ? $_GET['mensagem_class'] : '';
   <script src="js/script.js"></script>
 </body>
 <script>
-  // Mostrar o pop-up após o carregamento da página
+  // Exibe o pop-up ao carregar a página
   window.onload = function () {
     var popup = document.getElementById("popupMessage");
     if (popup) {

@@ -27,29 +27,27 @@ body {
 
 
 .popup {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px;
-  width: 80%;
-  max-width: 500px;
+  display: block;
+  width: fit-content; /* Ajusta o tamanho para caber no texto */
+  max-width: 80%; /* Limita a largura da mensagem */
+  margin: 20px auto; /* Centraliza horizontalmente */
+  padding: 10px 20px;
+  text-align: center; /* Centraliza o texto */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  display: none;
-  z-index: 9999;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .popup.success {
-  background-color: #4CAF50;
+  border-color: green;
+  color: green;
 }
 
 .popup.error {
-  background-color: #f44336;
+  border-color: red;
+  color: red;
 }
-
 
 
 p {

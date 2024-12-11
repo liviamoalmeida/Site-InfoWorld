@@ -54,8 +54,10 @@ function formatarCategoria($categoria)
               <a class="nav-link" href="about-me.html">Nossa Equipe</a>
             </li>
           </ul>
+            <li class="list-inline-item"><a href="login.php">Área da Administração</a></li>          
         </div>
-      </nav>
+    </div>
+    </nav>
     </div>
   </header>
   <!-- /navigation -->
